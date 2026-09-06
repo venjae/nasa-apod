@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NASA / APOD</title>
+</head>
+
+<body>
+  <div id="app">
+    <header>
+      <p>NASA / APOD</p>
+      <p id="current-date"></p>
+    </header>
+
+    <main>
+      <section class="hero">
+        <p class="eyebrow">ASTRONOMY</p>
+        <h1>PICTURE<br />OF THE DAY</h1>
+      </section>
+
+      <section class="apod">
+        <div class="image-container">
+          <img src="" alt="" id="apod-image" />
+        </div>
+
+        <div class="apod-info">
+          <p class="eyebrow">TODAY'S IMAGE</p>
+
+          <h2 id="apod-title">Loading...</h2>
+          <div class="metadata">
+            <p id="apod-date"></p>
+            <p>NASA / APOD</p>
+          </div>
+
+          <p id="apod-description"></p>
+        </div>
+      </section>
+    </main>
+  </div>  
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
