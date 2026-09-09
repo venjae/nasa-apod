@@ -4,6 +4,7 @@ const API_URL =
   `https://api.nasa.gov/planetary/apod?api_key=${import.meta.env.VITE_NASA_API_KEY}`
 
 const image = document.querySelector('#apod-image')
+const video = document.querySelector('#apod-video')
 const title = document.querySelector('#apod-title')
 const date = document.querySelector('#apod-date')
 const description = document.querySelector('#apod-description')
@@ -30,8 +31,16 @@ async function getAPOD() {
       throw new Error('NASA API did not return a valid APOD')
     }
 
-    image.src = data.url
-    image.alt = data.title
+    if (data.media_type === 'video') {
+      image.style.display = 'none'
+      video.style.display = 'block'
+      video.src = data.url
+    } else {
+      video.style.display = 'none'
+      image.style.display = 'block'
+      image.src = data.url
+      image.alt = data.title
+    }
 
     title.textContent = data.title
     date.textContent = data.date
